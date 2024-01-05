@@ -1,3 +1,6 @@
 .gradle
 build
 docs/userguide/site
+/local.properties
+/.idea
+!/.idea/runConfigurations
