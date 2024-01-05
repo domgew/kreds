@@ -141,7 +141,8 @@ internal abstract class KonnectionImpl(
 
     override suspend fun write(message: RedisMessage): Unit = writeInternal(message, false)
 
-    override suspend fun writeAndFlush(message: RedisMessage): Unit = writeInternal(message, true)
+    override suspend fun writeAndFlush(message: RedisMessage): Unit =
+        writeInternal(message, true)
 
     override suspend fun read(): RedisMessage = withReentrantLock {
         if (!isConnected()) throw KredsNotYetConnectedException()
